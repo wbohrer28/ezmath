@@ -2,6 +2,8 @@
 
 A calculator website created using the power of Python (using PyScript). (Probably) regular updates at the time of you reading this.
 
+Website on W3Spaces: <a href="https://ez-math.w3spaces.com/">EZMath Website</a>
+
 Currently supports the following calculators (you can always suggest your own on the link provided in the website) {
 - Basic Integer Calculator
 - Basic Decimal Calculator
