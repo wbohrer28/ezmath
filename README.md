@@ -8,3 +8,5 @@ Currently supports the following calculators (you can always suggest your own on
 - Basic Fraction Calculator (untranslated)
 
 }
+
+© 2023 William Bohrer. Created for educational purposes. Licensed under the MIT License: <a href="https://github.com/wbohrer28/ezmath/blob/main/LICENSE">Full license</a>
