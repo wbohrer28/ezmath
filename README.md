@@ -6,4 +6,5 @@ Currently supports the following calculators (you can always suggest your own on
 - Basic Integer Calculator
 - Basic Decimal Calculator
 - Basic Fraction Calculator (untranslated)
+
 }
