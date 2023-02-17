@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculators | EZMath</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/pyscript.css" />
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+<div class="topbar">
+<a href="index.html"><img class="topbarIcon" src="images/favicon.ico" alt="EZMath"></a>
+<a href="index.html" class="iconSideText">EZMath</a>
+<a href="about.html" class="topbarLink">About</a>
+<a href="changelog.html" class="topbarLink">Changelog</a>
+<a href="calculators.html" class="topbarLink">Calculators</a>
+</div>
+<div class="header">
+<img src="images/header.jpg" alt="Math Homework" class="header">
+<div class="header-centered">Calculators</div>
+</div>
+
+<div class="basicIntCalc">
+<h3>Basic Integer Calculator</h3>
+<form onsubmit="return false">
+<input type="number" id="basicIntCalc1"/>
+<select id="basicIntCalcOperator">
+<option value="Add">&plus;</option>
+<option value="Subtract">&minus;</option>
+<option value="Multiply">&times;</option>
+<option value="Divide">&divide;</option>
+</select>
+<input type="number" id="basicIntCalc2"/>
+<button id="basicIntSubmitButton" type="submit" pys-onClick="basicIntCalc">Solve</button>
+</form>
+
+<p><b>Answer: </b><label id="basicIntCalcOutput">N/A</label></p>
+</div>
+
+<div class="basicDecCalc">
+<h3>Basic Decimal Calculator</h3>
+<form onsubmit="return false">
+<input type="number" id="basicDecCalc1"/>
+<select id="basicDecCalcOperator">
+<option value="Add">&plus;</option>
+<option value="Subtract">&minus;</option>
+<option value="Multiply">&times;</option>
+<option value="Divide">&divide;</option>
+</select>
+<input type="number" id="basicDecCalc2"/>
+<button id="basicDecSubmitButton" type="submit" pys-onClick="basicDecCalc">Solve</button>
+</form>
+
+<p><b>Answer: </b><label id="basicDecCalcOutput">N/A</label></p>
+</div>
+
+<div class="basicFracCalc">
+<h3>Basic Fraction Calculator</h3>
+<p>Input fractions like this: 1/2</p>
+<form onsubmit="return false">
+<input type="text" id="basicFracCalc1"/>
+<select id="basicFracCalcOperator">
+<option value="Add">&plus;</option>
+<option value="Subtract">&minus;</option>
+<option value="Multiply">&times;</option>
+<option value="Divide">&divide;</option>
+</select>
+<input type="text" id="basicFracCalc2"/>
+<button id="basicFracSubmitButton" type="submit" pys-onClick="basicFracCalc">Solve</button>
+</form>
+
+<p><b>Answer: </b><label id="basicFracCalcOutput">N/A</label></p>
+<p>Your solution will appear like this: Fraction(1, 2). Translation: 1/2</p>
+</div>
+
+<div class="submitCalc">
+<h3>Submit a calculator suggestion today!</h3>
+<br>
+<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeaDHfBJBsTyuQbyaKWdiRkI-h4IkvKwpbCkOTgxc-Cf1YLDA/viewform">Form</a>
+<br><br>
+</div>
+<div class="footer">
+<div class="copyright">&copy; 2023 William Bohrer. Created for educational purposes. Licensed under the MIT License: <a href="https://github.com/wbohrer28/ezmath/blob/main/LICENSE">Full license</a></div>
+</div>
+<py-script>
+from fractions import Fraction
+
+def basicIntCalc(*args, **kwargs):
+    num1 = int(Element("basicIntCalc1").element.value)
+    num2 = int(Element("basicIntCalc2").element.value)
+    operator = Element("basicIntCalcOperator").element.value
+
+    if operator == "Add":
+        output = num1 + num2
+        pyscript.write("basicIntCalcOutput", output)
+    elif operator == "Subtract":
+        output = num1 - num2
+        pyscript.write("basicIntCalcOutput", output)
+    elif operator == "Multiply":
+        output = num1 * num2
+        pyscript.write("basicIntCalcOutput", output)
+    else:
+        output = num1 / num2
+        pyscript.write("basicIntCalcOutput", output)
+
+def basicDecCalc(*args, **kwargs):
+    num1 = float(Element("basicDecCalc1").element.value)
+    num2 = float(Element("basicDecCalc2").element.value)
+    operator = Element("basicDecCalcOperator").element.value
+
+    if operator == "Add":
+        output = num1 + num2
+        pyscript.write("basicDecCalcOutput", output)
+    elif operator == "Subtract":
+        output = num1 - num2
+        pyscript.write("basicDecCalcOutput", output)
+    elif operator == "Multiply":
+        output = num1 * num2
+        pyscript.write("basicDecCalcOutput", output)
+    else:
+        output = num1 / num2
+        pyscript.write("basicDecCalcOutput", output)
+
+def basicFracCalc(*args, **kwargs):
+    num1 = Fraction(Element("basicFracCalc1").element.value)
+    num2 = Fraction(Element("basicFracCalc2").element.value)
+    operator = Element("basicFracCalcOperator").element.value
+    
+    if operator == "Add":
+        output = num1 + num2
+        pyscript.write("basicFracCalcOutput", output)
+    elif operator == "Subtract":
+        output = num1 - num2
+        pyscript.write("basicFracCalcOutput", output)
+    elif operator == "Multiply":
+        output = num1 * num2
+        pyscript.write("basicFracCalcOutput", output)
+    else:
+        output = num1 / num2
+        pyscript.write("basicFracCalcOutput", output)
+</py-script>
+</body>
+</html>

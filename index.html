@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EZMath | Calculators for School</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/pyscript.css">
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+<div class="topbar">
+<a href="index.html"><img class="topbarIcon" src="images/favicon.ico" alt="EZMath"></a>
+<a href="index.html" class="iconSideText">EZMath</a>
+<a href="about.html" class="topbarLink">About</a>
+<a href="changelog.html" class="topbarLink">Changelog</a>
+<a href="calculators.html" class="topbarLink">Calculators</a>
+</div>
+<div class="header">
+<img src="images/header.jpg" alt="Math Homework" class="header">
+<div class="header-centered">EZMath&#8482;</div>
+</div>
+<div class="body1">
+<h2>Trouble with math homework?</h2>
+<p>EZMath has got you covered.</p>
+<h2>&darr;</h2>
+</div>
+<div class="body2">
+<img src="images/example1.jpg" class="example1">
+<img src="images/example2.jpg" class="example2">
+<img src="images/example3.jpg" class="example3">
+<br>
+<p class="example1">With our ride array of calculators, any homework problem can be solved that much easier.</p>
+<p class="example2">Designed to be easy-to-use and navigate without issue.</p>
+<p class="example3">Made for students, by students.</p>
+</div>
+<h3>As of <label id="date"></label>, we have <label id="calcNum"></label> calculators available for public use.</h3>
+<h2>Explore our range of calculators now.</h2>
+<br>
+<a href="calculators.html" class="button">Calculators</a>
+<br><br>
+<div class="footer">
+<div class="copyright">&copy; 2023 William Bohrer. Created for educational purposes. Licensed under the MIT License: <a href="https://github.com/wbohrer28/ezmath/blob/main/LICENSE">Full license</a></div>
+</div>
+<py-script>
+import datetime as dt
+
+calcNum = int(3)
+
+pyscript.write("date", dt.date.today().strftime("%A, %B %d, %Y"))
+pyscript.write("calcNum", str(calcNum))
+</py-script>
+</body>
+</html>
