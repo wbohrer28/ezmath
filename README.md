@@ -7,7 +7,7 @@ Website: <a href="https://wbohrer28.github.io/ezmath/">EZMath Website</a>
 Currently supports the following calculators (you can always suggest your own on the link provided in the website) {
 - Basic Integer Calculator
 - Basic Decimal Calculator
-- Basic Fraction Calculator (untranslated)
+- Basic Fraction Calculator
 
 }
 
