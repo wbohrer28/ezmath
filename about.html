@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content-"width=device-width, initial-scale=1">
+
+<title>Calculators | EZMath</title>
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<script defer src="pyscript/pyscript.js"></script>
+<link href="pyscript/pyscript.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+<div class="container-fluid">
+<a class="navbar-brand" href="index.html">
+<img class="me-1 d-inline-block align-text-top" src="assets/images/favicon.ico" alt="Logo" width="25px" height="25px">
+EZMath
+</a>
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="calculators.html">Calculators</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="changelog.html">Changelog</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html">About</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="container-fluid p-5 text-center text-white bg-img" style="background-image: url('assets/images/header.webp'); background-position: center; background-size: 100%;">
+<h1>About</h1>
+</div>
+
+<div class="container-fluid p-5 d-flex justify-content-center">
+<div class="card text-end bg-light w-50 text-center p-4">
+<div class="card-body">
+<h5 class="card-title">About EZMath and its founder</h5>
+<p>EZMath was originally created as a project for school by William Bohrer. It was used to demonstrate the power of Python and how it could be used on the web. It was released on GitHub on February 16, 2023, and published to GitHub Pages on February 27, 2023.</p>
+
+<button type="button" id="calcBtn" class="btn btn-light border" py-click="redirect('https://github.com/wbohrer28/ezmath')">GitHub</button>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid bg-dark text-center text-white p-4">
+<small>&copy; 2023 William Bohrer. All rights reserved. Licensed under the MIT License: <a href="https://github.com/wbohrer28/ezmath/blob/main/LICENSE">Full license</a></small>
+</div>
+
+<py-script>
+from js import window
+
+def redirect(url):
+    window.location.href = url
+</py-script>
+</body>
+</html>

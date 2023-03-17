@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content-"width=device-width, initial-scale=1">
+
+<title>Calculators | EZMath</title>
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<script defer src="pyscript/pyscript.js"></script>
+<link href="pyscript/pyscript.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+<div class="container-fluid">
+<a class="navbar-brand" href="index.html">
+<img class="me-1 d-inline-block align-text-top" src="assets/images/favicon.ico" alt="Logo" width="25px" height="25px">
+EZMath
+</a>
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="calculators.html">Calculators</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="changelog.html">Changelog</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html">About</a>
+</li>
+</ul>
+</div>
+</nav>
+
+<div class="container-fluid p-5 text-center text-white bg-img" style="background-image: url('assets/images/header.webp'); background-position: center; background-size: 100%;">
+<h1>Calculators</h1>
+</div>
+
+<div class="container-fluid text-center text-black p-5">
+<h5>Basic Integer Calculator</h5>
+<div class="container-fluid d-flex justify-content-center mt-4 mb-4">
+<form onsubmit="return false" class="d-flex gap-3 w-50">
+<input type="number" id="basicIntCalc1" class="form-control w-50"/>
+<select class="form-select w-25" id="basicIntCalcOperator">
+<option value="Add">&plus;</option>
+<option value="Subtract">&minus;</option>
+<option value="Multiply">&times;</option>
+<option value="Divide">&divide;</option>
+</select>
+<input type="number" id="basicIntCalc2" class="form-control w-50"/>
+<button id="basicIntSubmitButton" type="submit" py-click="basicIntCalc()" class="btn bg-light border">Solve</button>
+</form>
+</div>
+<p><strong>Result: </strong><span id="basicIntCalcOutput">N/A</label></p>
+</div>
+
+<div class="container-fluid text-center text-black p-5">
+<h5>Basic Decimal Calculator</h5>
+<div class="container-fluid d-flex justify-content-center mt-4 mb-4">
+<form onsubmit="return false" class="d-flex gap-3 w-50">
+<input type="number" id="basicDecCalc1" class="form-control w-50" step="any"/>
+<select class="form-select w-25" id="basicDecCalcOperator">
+<option value="Add">&plus;</option>
+<option value="Subtract">&minus;</option>
+<option value="Multiply">&times;</option>
+<option value="Divide">&divide;</option>
+</select>
+<input type="number" id="basicDecCalc2" class="form-control w-50" step="any"/>
+<button id="basicDecSubmitButton" type="submit" py-click="basicDecCalc()" class="btn bg-light border">Solve</button>
+</form>
+</div>
+<p><strong>Result: </strong><span id="basicDecCalcOutput">N/A</label></p>
+</div>
+
+<div class="container-fluid text-center text-black p-5">
+<h5>Basic Fraction Calculator</h5>
+<small>Input fractions like this: 1/2</small>
+<div class="container-fluid d-flex justify-content-center mt-4 mb-4">
+<form onsubmit="return false" class="d-flex gap-3 w-50">
+<input type="text" id="basicFracCalc1" class="form-control w-50" step="any"/>
+<select class="form-select w-25" id="basicFracCalcOperator">
+<option value="Add">&plus;</option>
+<option value="Subtract">&minus;</option>
+<option value="Multiply">&times;</option>
+<option value="Divide">&divide;</option>
+</select>
+<input type="text" id="basicFracCalc2" class="form-control w-50" step="any"/>
+<button id="basicFracSubmitButton" type="submit" py-click="basicFracCalc()" class="btn bg-light border">Solve</button>
+</form>
+</div>
+<p><strong>Result: </strong><span id="basicFracCalcOutput">N/A</label></p>
+</div>
+
+<div class="container-fluid text-center d-flex justify-content-center">
+<card class="card w-25 p-3 bg-light">
+<div class="card-body">
+<h5 class="card-title">Submit a calculator suggestion today!</h5>
+<button type="button" class="btn bg-light border" py-click="redirect('https://docs.google.com/forms/d/e/1FAIpQLSeaDHfBJBsTyuQbyaKWdiRkI-h4IkvKwpbCkOTgxc-Cf1YLDA/viewform')">Form</button>
+</div>
+</card>
+</div>
+<div class="container-fluid bg-dark text-center text-white p-4 mt-5">
+<small>&copy; 2023 William Bohrer. All rights reserved. Licensed under the MIT License: <a href="https://github.com/wbohrer28/ezmath/blob/main/LICENSE">Full license</a></small>
+</div>
+<py-script>
+from js import window
+from fractions import Fraction
+
+def redirect(url):
+    window.location.href = url
+
+def basicIntCalc(*args, **kwargs):
+    num1 = int(Element("basicIntCalc1").element.value)
+    num2 = int(Element("basicIntCalc2").element.value)
+    operator = Element("basicIntCalcOperator").element.value
+
+    if operator == "Add":
+        output = num1 + num2
+        pyscript.write("basicIntCalcOutput", output)
+    elif operator == "Subtract":
+        output = num1 - num2
+        pyscript.write("basicIntCalcOutput", output)
+    elif operator == "Multiply":
+        output = num1 * num2
+        pyscript.write("basicIntCalcOutput", output)
+    else:
+        output = num1 / num2
+        pyscript.write("basicIntCalcOutput", output)
+
+def basicDecCalc(*args, **kwargs):
+    num1 = float(Element("basicDecCalc1").element.value)
+    num2 = float(Element("basicDecCalc2").element.value)
+    operator = Element("basicDecCalcOperator").element.value
+
+    if operator == "Add":
+        output = num1 + num2
+        pyscript.write("basicDecCalcOutput", output)
+    elif operator == "Subtract":
+        output = num1 - num2
+        pyscript.write("basicDecCalcOutput", output)
+    elif operator == "Multiply":
+        output = num1 * num2
+        pyscript.write("basicDecCalcOutput", output)
+    else:
+        output = num1 / num2
+        pyscript.write("basicDecCalcOutput", output)
+
+def basicFracCalc(*args, **kwargs):
+    num1 = Fraction(Element("basicFracCalc1").element.value)
+    num2 = Fraction(Element("basicFracCalc2").element.value)
+    operator = Element("basicFracCalcOperator").element.value
+    
+    if operator == "Add":
+        result = num1 + num2
+        numerator, denominator = result.as_integer_ratio()
+        pyscript.write("basicFracCalcOutput", "%s/%s" % (numerator, denominator))
+    elif operator == "Subtract":
+        result = num1 - num2
+        numerator, denominator = result.as_integer_ratio()
+        pyscript.write("basicFracCalcOutput", "%s/%s" % (numerator, denominator))
+    elif operator == "Multiply":
+        result = num1 * num2
+        numerator, denominator = result.as_integer_ratio()
+        pyscript.write("basicFracCalcOutput", "%s/%s" % (numerator, denominator))
+    else:
+        result = num1 / num2
+        numerator, denominator = result.as_integer_ratio()
+        pyscript.write("basicFracCalcOutput", "%s/%s" % (numerator, denominator))
+</py-script>
+</body>
+</html>

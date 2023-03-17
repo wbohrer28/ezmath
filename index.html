@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content-"width=device-width, initial-scale=1">
+
+<title>EZMath | Calculators for School</title>
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<script defer src="pyscript/pyscript.js"></script>
+<link href="pyscript/pyscript.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+<div class="container-fluid">
+<a class="navbar-brand" href="index.html">
+<img class="me-1 d-inline-block align-text-top" src="assets/images/favicon.ico" alt="Logo" width="25px" height="25px">
+EZMath
+</a>
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="calculators.html">Calculators</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="changelog.html">Changelog</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="about.html">About</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="container-fluid p-5 text-center text-white bg-img" style="background-image: url('assets/images/header.webp'); background-position: center; background-size: 100%;">
+<h1>EZMath&#8482;</h1>
+</div>
+<div class="container-fluid p-5 text-center" style="background-color: lightgrey;">
+<h4>Trouble with math homework?</h4>
+<p>EZMath has got you covered.</p>
+<h3>&darr;</h3>
+</div>
+<div class="container-fluid p-5 d-flex justify-content-evenly text-white" style="background-color: dimgrey;">
+<div class="card bg-dark" style="width: 18rem;">
+<img src="assets/images/example1.webp" class="card-img-top object-fit-cover" alt="Example 1" height="200px">
+<div class="card-body">
+<h5 class="card-title">Variety</h5>
+<p class="card-text">With our wide array of calculators, any homework problem can be solved that much easier.</p>
+</div>
+</div>
+<div class="card text-center bg-dark" style="width: 18rem;">
+<img src="assets/images/example2.webp" class="card-img-top object-fit-cover" alt="Example 1" height="200px">
+<div class="card-body">
+<h5 class="card-title">Ease-of-use</h5>
+<p class="card-text">Designed to be easy-to-use and navigate without issue.</p>
+</div>
+</div>
+<div class="card text-end bg-dark" style="width: 18rem;">
+<img src="assets/images/example3.webp" class="card-img-top object-fit-cover" alt="Example 1" height="200px">
+<div class="card-body">
+<h5 class="card-title">Relatability</h5>
+<p class="card-text">Made <i>for</i> students, <i>by</i> students.</p>
+</div>
+</div>
+</div>
+<div class="container-fluid p-5 bg-body text-center">
+<h5>As of <label id="date"></label>, we have <label id="calcNum"></label> calculators available for public use.</h5>
+<h3>Explore our range of calculators now.</h3>
+<br>
+<button type="button" id="calcBtn" class="btn btn-light border btn-lg" py-click="redirect('calculators.html')">Calculators</button>
+</div>
+<div class="container-fluid bg-dark text-center text-white p-4">
+<small>&copy; 2023 William Bohrer. All rights reserved. Licensed under the MIT License: <a href="https://github.com/wbohrer28/ezmath/blob/main/LICENSE">Full license</a></small>
+</div>
+
+<py-script>
+from js import window
+import datetime as dt
+
+def redirect(url):
+    window.location.href = url
+
+calcNum = int(3)
+
+pyscript.write("date", dt.date.today().strftime("%A, %B %d, %Y"))
+pyscript.write("calcNum", str(calcNum))
+</py-script>
+</body>
+</html>
