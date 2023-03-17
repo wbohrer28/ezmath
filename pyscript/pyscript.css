@@ -1,0 +1,31 @@
+py-config {
+    display: none;
+}
+
+py-script:not(:defined) {
+    display: none;
+}
+
+py-repl:not(:defined) {
+    display: none;
+}
+
+py-title:not(:defined) {
+    display: none;
+}
+
+py-inputbox:not(:defined) {
+    display: none;
+}
+
+py-button:not(:defined) {
+    display: none;
+}
+
+py-box:not(:defined) {
+    display: none;
+}
+
+.py-overlay {
+    display: none;
+}
