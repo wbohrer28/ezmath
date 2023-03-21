@@ -1,4 +1,4 @@
-# EZMath v1.1
+# EZMath v1.2
 
 A calculator website created using the power of Python (using PyScript). Created for a school project designed to showcase Python on the web.
 
